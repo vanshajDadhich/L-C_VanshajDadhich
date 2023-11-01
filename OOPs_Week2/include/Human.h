@@ -14,6 +14,9 @@ class Human {
         std::string getName();
         int getAgeInYears();
         char getGender();
+        void setName(std::string name);
+        void setAgeInYears(int ageInYears);
+        void setGender(char gender);
 
     public:
         Human(std::string& name, int& ageInYears, char& gender);

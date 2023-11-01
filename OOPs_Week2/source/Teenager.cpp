@@ -18,3 +18,7 @@ void Teenager :: displayInfo(){
 void Teenager :: setHobby(std::string& hobby){
     this->hobby = hobby;
 }
+
+void Teenager :: setCurrentStandard(int currentStandard){
+    this->currentStandard = currentStandard;
+}

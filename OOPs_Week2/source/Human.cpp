@@ -18,3 +18,15 @@ int Human :: getAgeInYears() {
 char Human :: getGender() {
     return this->gender;
 }
+
+void Human :: setName(std::string name){
+    this->name = name;
+}
+
+void Human :: setAgeInYears(int ageInYears){
+    this->ageInYears = ageInYears;
+}
+
+void Human :: setGender(char gender){
+    this->gender = gender;
+}

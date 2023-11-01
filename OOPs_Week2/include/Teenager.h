@@ -9,5 +9,6 @@ class Teenager : public Human {
         Teenager(std::string name, int ageInYears, char gender, std::string hobby, int currentStandard);
         void displayInfo();
         void setHobby(std::string& hobby);
+        void setCurrentStandard(int currentStandard);
 
 };

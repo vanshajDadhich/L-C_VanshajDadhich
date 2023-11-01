@@ -1,9 +1,9 @@
 #include "../include/Adult.h"
 #include<iostream>
 
-Adult :: Adult(std::string name, int ageInYears, char gender, std::string profession, int WorkingExperienceInYears) : Human(name, ageInYears, gender){
+Adult :: Adult(std::string name, int ageInYears, char gender, std::string profession, int workingExperienceInYears) : Human(name, ageInYears, gender){
     this->profession = profession;
-    this->WorkingExperienceInYears = WorkingExperienceInYears;
+    this->workingExperienceInYears = workingExperienceInYears;
 }
 
 void Adult :: displayInfo(){
@@ -12,9 +12,13 @@ void Adult :: displayInfo(){
              <<"\n   Age In Years : "<<getAgeInYears()
              <<"\n   Gender : "<<getGender()
              <<"\n   Profession : "<<profession
-             <<"\n   Working Experience In Years : "<<WorkingExperienceInYears<<std::endl;
+             <<"\n   Working Experience In Years : "<<workingExperienceInYears<<std::endl;
 }
 
 void Adult :: setProfession(std::string& hobby){
     this->profession = profession;
+}
+
+void Adult :: setWorkingExperienceInYears(int workingExperienceInYears){
+    this->workingExperienceInYears = workingExperienceInYears;
 }
