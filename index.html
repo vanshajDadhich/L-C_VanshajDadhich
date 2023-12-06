@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pexels API Image Fetch</title>
+</head>
+<body>
+    <div id="image-container">
+    </div>
+
+    <script>
+        async function fetchPexelsImages() {
+            try {
+                const apiKey = 'lPCEx1qunfHN7LiGHXn5l2vepshUMZfblzeaBhNGklMjodtXWgK4UQNo';
+                const apiUrl = 'https://api.pexels.com/v1/search?query=tigers&per_page=4';
+
+                const pexelAPIResponse = await fetch(apiUrl, {
+                    headers: {
+                        'Authorization': apiKey,
+                    },
+                });
+
+                if (!pexelAPIResponse.ok) {
+                    throw new Error(`HTTP error! Status: ${pexelAPIResponse.status}`);
+                }
+
+                const ImageData = await pexelAPIResponse.json();
+
+                const photos = ImageData.photos;
+
+                const imageContainer = document.getElementById('image-container');
+                photos.forEach(photo => {
+                    const imageUrl = photo.src.medium;
+                    imageContainer.innerHTML += `<img src="${imageUrl}" alt="Pexels Image">`;
+                });
+            } catch (error) {
+                console.error('Error fetching and displaying images:', error.message);
+            }
+        }
+
+        window.onload = fetchPexelsImages;
+    </script>
+</body>
+</html>
